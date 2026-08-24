@@ -1,172 +1,172 @@
-local _0x0005 = _0x0006:_0x0007("_0x0005")
-local _0x0008 = _0x0006:_0x0007("_0x0008")
-local _0x0009 = _0x0006:_0x0007("_0x0009")
-local _0x000a = _0x0006:_0x0007("_0x000a")
-local _0x000b = _0x0006:_0x0007("_0x000b")
-local _0x000c = _0x000a._0x000d
-local _0x0015 = (pcall(function() return _0x0016() end) and _0x0016()) or (pcall(function() return _0x000b end) and _0x000b) or _0x000c:_0x0017("_0x0018")
-local _0x0019 = "_0x001a"
-if _0x0015:_0x001b(_0x0019) then
-_0x0015[_0x0019]:_0x001c()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local SoundService = game:GetService("SoundService")
+local TweenService = game:GetService("TweenService")
+local Players = game:GetService("Players")
+local CoreGui = game:GetService("CoreGui")
+local player = Players.LocalPlayer
+local targetGui = (pcall(function() return gethui() end) and gethui()) or (pcall(function() return CoreGui end) and CoreGui) or player:WaitForChild("PlayerGui")
+local uiName = "ArasakaChat_Gui"
+if targetGui:FindFirstChild(uiName) then
+targetGui[uiName]:Destroy()
 end
-local _0x0020 = _0x0021._0x0022("_0x0023", _0x0008)
-_0x0020._0x0024 = "_0x0025://4499400560"
-_0x0020._0x0026 = 0.6
-_0x0020._0x0027 = "_0x0028"
-local function _0x0029()
-pcall(function() _0x0020:_0x002a() end)
+local clickSound = Instance.new("Sound", SoundService)
+clickSound.SoundId = "rbxassetid://4499400560"
+clickSound.Volume = 0.6
+clickSound.Name = "ButtonClickSound"
+local function playClickSound()
+pcall(function() clickSound:Play() end)
 end
-local _0x002c = _0x002c or _0x002f and _0x002f._0x0030 or _0x0031 and _0x0031._0x002c
-if not _0x002c then
-_0x0032("_0x0033 _0x0034 _0x0035ã_0x000f _0x0036 _0x002c!")
+local WebSocket = WebSocket or syn and syn.websocket or Krnl and Krnl.WebSocket
+if not WebSocket then
+warn("Seu executor não suporta WebSocket!")
 return
 end
-local _0x0037, _0x0038 = pcall(function()
-return _0x002c._0x0039("_0x003a://_0x003b-_0x003c._0x003d._0x002d")
+local successWs, ws = pcall(function()
+return WebSocket.connect("wss://chatprivado-cwu3.onrender.com")
 end)
-if not _0x0037 or not _0x0038 then
-_0x0032("_0x003e _0x003f _0x0040 _0x0041 _0x0042 _0x002c.")
+if not successWs or not ws then
+warn("Falha ao conectar no servidor WebSocket.")
 return
 end
-local _0x0048 = _0x000c._0x0049
-local _0x004a, _0x004b = pcall(function()
-return _0x000a:_0x004c(_0x0048, _0x004d._0x004e._0x004f, _0x004d._0x0050._0x0051)
+local userId = player.UserId
+local successThumb, thumbUrl = pcall(function()
+return Players:GetUserThumbnailAsync(userId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
 end)
-if not _0x004a then _0x004b = "" end
-local _0x0057 = _0x0021._0x0022("_0x0058", _0x0015)
-_0x0057._0x0027 = _0x0019
-_0x0057._0x0059 = false
-local _0x005a = _0x0021._0x0022("_0x005b", _0x0057)
-_0x005a._0x005c = _0x005d._0x0022(0, 320, 0, 240)
-_0x005a._0x005e = _0x005d._0x0022(0.5, -160, 0.5, -120)
-_0x005a._0x005f = _0x0060._0x0061(0, 0, 0)
-_0x005a._0x0062 = 0
-_0x005a._0x0063 = true
-_0x005a._0x0064 = true
-_0x005a._0x0065 = true
-local _0x0066 = _0x0021._0x0022("_0x0067", _0x005a)
-_0x0066._0x0068 = _0x0069._0x0022(0, 10)
-local _0x006a = _0x0021._0x0022("_0x006b", _0x005a)
-_0x006a._0x006c = _0x0060._0x0061(215, 50, 50)
-_0x006a._0x006d = 1.8
-local _0x0071 = _0x0021._0x0022("_0x005b", _0x005a)
-_0x0071._0x005c = _0x005d._0x0022(1, 0, 0, 38)
-_0x0071._0x005f = _0x0060._0x0061(0, 0, 0)
-_0x0071._0x0062 = 0
-local _0x0072 = _0x0021._0x0022("_0x0067", _0x0071)
-_0x0072._0x0068 = _0x0069._0x0022(0, 10)
-local _0x0073 = _0x0021._0x0022("_0x0074", _0x0071)
-_0x0073._0x005c = _0x005d._0x0022(0, 24, 0, 24)
-_0x0073._0x005e = _0x005d._0x0022(0, 8, 0.5, -12)
-_0x0073._0x0075 = 1
-_0x0073._0x0076 = "_0x0025://132397224962668"
-local _0x0077 = _0x0021._0x0022("_0x0078", _0x0071)
-_0x0077._0x005c = _0x005d._0x0022(1, 0, 1, 0)
-_0x0077._0x0075 = 1
-_0x0077._0x0079 = "_0x0000 _0x0002"
-_0x0077._0x007a = _0x0060._0x0061(215, 50, 50)
-_0x0077._0x007b = _0x004d._0x007b._0x007c
-_0x0077._0x007d = 14
-local _0x007e = _0x0021._0x0022("_0x007f", _0x0071)
-_0x007e._0x005c = _0x005d._0x0022(0, 30, 0, 30)
-_0x007e._0x005e = _0x005d._0x0022(1, -34, 0.5, -15)
-_0x007e._0x005f = _0x0060._0x0061(15, 15, 15)
-_0x007e._0x0079 = "-"
-_0x007e._0x007a = _0x0060._0x0061(215, 50, 50)
-_0x007e._0x007b = _0x004d._0x007b._0x007c
-_0x007e._0x007d = 16
-_0x007e._0x0062 = 0
-_0x007e._0x0080 = 2
-local _0x0081 = _0x0021._0x0022("_0x0067", _0x007e)
-_0x0081._0x0068 = _0x0069._0x0022(0, 6)
-local _0x0085 = _0x0021._0x0022("_0x005b", _0x005a)
-_0x0085._0x005c = _0x005d._0x0022(1, 0, 1, -38)
-_0x0085._0x005e = _0x005d._0x0022(0, 0, 0, 38)
-_0x0085._0x0075 = 1
-local _0x0086 = _0x0021._0x0022("_0x0087", _0x0085)
-_0x0086._0x0075 = 1
-_0x0086._0x005e = _0x005d._0x0022(0, 8, 0, 8)
-_0x0086._0x005c = _0x005d._0x0022(0, 304, 0, 138)
-_0x0086._0x0088 = _0x005d._0x0022(0, 0, 2, 0)
-_0x0086._0x0089 = 4
-local _0x008a = _0x0021._0x0022("_0x008b", _0x0086)
-_0x008a._0x008c = _0x004d._0x008c._0x008d
-_0x008a._0x008e = _0x0069._0x0022(0, 6)
-local _0x008f = _0x0021._0x0022("_0x0090", _0x0085)
-_0x008f._0x005f = _0x0060._0x0061(15, 15, 15)
-_0x008f._0x005e = _0x005d._0x0022(0, 8, 0, 154)
-_0x008f._0x005c = _0x005d._0x0022(0, 220, 0, 32)
-_0x008f._0x007b = _0x004d._0x007b._0x0091
-_0x008f._0x0092 = "_0x0093 _0x0094 _0x0095..."
-_0x008f._0x0079 = ""
-_0x008f._0x007a = _0x0060._0x0061(255, 255, 255)
-_0x008f._0x007d = 13
-local _0x0096 = _0x0021._0x0022("_0x006b", _0x008f)
-_0x0096._0x006c = _0x0060._0x0061(50, 50, 50)
-_0x0096._0x006d = 1
-local _0x0097 = _0x0021._0x0022("_0x0067", _0x008f)
-_0x0097._0x0068 = _0x0069._0x0022(0, 6)
-local _0x0098 = _0x0021._0x0022("_0x007f", _0x0085)
-_0x0098._0x005f = _0x0060._0x0061(215, 50, 50)
-_0x0098._0x005e = _0x005d._0x0022(0, 234, 0, 154)
-_0x0098._0x005c = _0x005d._0x0022(0, 78, 0, 32)
-_0x0098._0x007b = _0x004d._0x007b._0x007c
-_0x0098._0x0079 = "_0x0099"
-_0x0098._0x007a = _0x0060._0x0061(255, 255, 255)
-_0x0098._0x007d = 12
-_0x0098._0x0062 = 0
-local _0x009a = _0x0021._0x0022("_0x0067", _0x0098)
-_0x009a._0x0068 = _0x0069._0x0022(0, 6)
-local _0x009e = false
-_0x007e._0x009f:_0x00a0(function()
-_0x0029()
-_0x009e = not _0x009e
-_0x0085._0x00a1 = not _0x009e
-local _0x00a2 = _0x009e and _0x005d._0x0022(0, 320, 0, 38) or _0x005d._0x0022(0, 320, 0, 240)
-_0x007e._0x0079 = _0x009e and "+" or "-"
-_0x0009:_0x00a3(_0x005a, _0x00a4._0x0022(0.25, _0x004d._0x00a5._0x00a6, _0x004d._0x00a7._0x00a8), {_0x005c = _0x00a2}):_0x002a()
+if not successThumb then thumbUrl = "" end
+local screenGui = Instance.new("ScreenGui", targetGui)
+screenGui.Name = uiName
+screenGui.ResetOnSpawn = false
+local frame = Instance.new("Frame", screenGui)
+frame.Size = UDim2.new(0, 320, 0, (275 - 35))
+frame.Position = UDim2.new(0.5, -(80 + 80), 0.5, -120)
+frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+frame.BorderSizePixel = 0
+frame.Active = true
+frame.Draggable = true
+frame.ClipsDescendants = true
+local uiCornerMain = Instance.new("UICorner", frame)
+uiCornerMain.CornerRadius = UDim.new(0, 10)
+local uiStrokeMain = Instance.new("UIStroke", frame)
+uiStrokeMain.Color = Color3.fromRGB(215, (25 + 25), (200 / 4))
+uiStrokeMain.Thickness = 1.8
+local titleBar = Instance.new("Frame", frame)
+titleBar.Size = UDim2.new(1, 0, 0, (117 - 79))
+titleBar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+titleBar.BorderSizePixel = 0
+local uiCornerTitle = Instance.new("UICorner", titleBar)
+uiCornerTitle.CornerRadius = UDim.new(0, (27 - 17))
+local decalImage = Instance.new("ImageLabel", titleBar)
+decalImage.Size = UDim2.new(0, (91 - 67), 0, (96 / 4))
+decalImage.Position = UDim2.new(0, 8, 0.5, -(36 / 3))
+decalImage.BackgroundTransparency = 1
+decalImage.Image = "rbxassetid://(66198612481334 + 66198612481334)"
+local titleText = Instance.new("TextLabel", titleBar)
+titleText.Size = UDim2.new(1, 0, 1, 0)
+titleText.BackgroundTransparency = 1
+titleText.Text = "ARASAKA CHAT"
+titleText.TextColor3 = Color3.fromRGB(215, (25 + 25), 50)
+titleText.Font = Enum.Font.GothamBold
+titleText.TextSize = 14
+local btnMinimizar = Instance.new("TextButton", titleBar)
+btnMinimizar.Size = UDim2.new(0, 30, 0, (15 + 15))
+btnMinimizar.Position = UDim2.new(1, -34, 0.5, -(45 / 3))
+btnMinimizar.BackgroundColor3 = Color3.fromRGB(15, 15, (45 / 3))
+btnMinimizar.Text = "-"
+btnMinimizar.TextColor3 = Color3.fromRGB(215, (100 / 2), (133 - 83))
+btnMinimizar.Font = Enum.Font.GothamBold
+btnMinimizar.TextSize = 16
+btnMinimizar.BorderSizePixel = 0
+btnMinimizar.ZIndex = 2
+local uiCornerMin = Instance.new("UICorner", btnMinimizar)
+uiCornerMin.CornerRadius = UDim.new(0, 6)
+local container = Instance.new("Frame", frame)
+container.Size = UDim2.new(1, 0, 1, -38)
+container.Position = UDim2.new(0, 0, 0, (89 - 51))
+container.BackgroundTransparency = 1
+local scrollingFrame = Instance.new("ScrollingFrame", container)
+scrollingFrame.BackgroundTransparency = 1
+scrollingFrame.Position = UDim2.new(0, 8, 0, (4 + 4))
+scrollingFrame.Size = UDim2.new(0, 304, 0, (276 / 2))
+scrollingFrame.CanvasSize = UDim2.new(0, 0, 2, 0)
+scrollingFrame.ScrollBarThickness = 4
+local uiListLayout = Instance.new("UIListLayout", scrollingFrame)
+uiListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+uiListLayout.Padding = UDim.new(0, 6)
+local textBox = Instance.new("TextBox", container)
+textBox.BackgroundColor3 = Color3.fromRGB((7 + 8), (7 + 8), (7 + 8))
+textBox.Position = UDim2.new(0, (23 - 15), 0, (77 + 77))
+textBox.Size = UDim2.new(0, (110 + 110), 0, 32)
+textBox.Font = Enum.Font.Gotham
+textBox.PlaceholderText = "Digite sua mensagem..."
+textBox.Text = ""
+textBox.TextColor3 = Color3.fromRGB(255, (278 - 23), 255)
+textBox.TextSize = (57 - 44)
+local uiStrokeBox = Instance.new("UIStroke", textBox)
+uiStrokeBox.Color = Color3.fromRGB(50, 50, (200 / 4))
+uiStrokeBox.Thickness = 1
+local uiCornerBox = Instance.new("UICorner", textBox)
+uiCornerBox.CornerRadius = UDim.new(0, 6)
+local textButton = Instance.new("TextButton", container)
+textButton.BackgroundColor3 = Color3.fromRGB((232 - 17), (100 / 2), 50)
+textButton.Position = UDim2.new(0, (702 / 3), 0, (462 / 3))
+textButton.Size = UDim2.new(0, 78, 0, (16 + 16))
+textButton.Font = Enum.Font.GothamBold
+textButton.Text = "ENVIAR"
+textButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+textButton.TextSize = (6 + 6)
+textButton.BorderSizePixel = 0
+local uiCornerBtn = Instance.new("UICorner", textButton)
+uiCornerBtn.CornerRadius = UDim.new(0, (70 - 64))
+local minimizado = false
+btnMinimizar.MouseButton1Click:Connect(function()
+playClickSound()
+minimizado = not minimizado
+container.Visible = not minimizado
+local targetSize = minimizado and UDim2.new(0, (362 - 42), 0, (19 + 19)) or UDim2.new(0, 320, 0, (120 + 120))
+btnMinimizar.Text = minimizado and "+" or "-"
+TweenService:Create(frame, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = targetSize}):Play()
 end)
-local function _0x00ab(_0x00ac, _0x00ad, _0x00ae)
-local _0x00af = _0x0021._0x0022("_0x005b", _0x0086)
-_0x00af._0x0075 = 1
-_0x00af._0x005c = _0x005d._0x0022(1, 0, 0, 32)
-local _0x00b0 = _0x0021._0x0022("_0x0074", _0x00af)
-_0x00b0._0x0075 = 1
-_0x00b0._0x005c = _0x005d._0x0022(0, 28, 0, 28)
-_0x00b0._0x0076 = _0x00ae or ""
-local _0x00b1 = _0x0021._0x0022("_0x0067", _0x00b0)
-_0x00b1._0x0068 = _0x0069._0x0022(1, 0)
-local _0x00b2 = _0x0021._0x0022("_0x0078", _0x00af)
-_0x00b2._0x0075 = 1
-_0x00b2._0x005e = _0x005d._0x0022(0, 34, 0, 0)
-_0x00b2._0x005c = _0x005d._0x0022(1, -34, 1, 0)
-_0x00b2._0x007b = _0x004d._0x007b._0x0091
-_0x00b2._0x0079 = '<_0x00b3 _0x00b4="#_0x00b5"><_0x00b6>' .. _0x00ac .. ':</_0x00b6></_0x00b3> ' .. _0x00ad
-_0x00b2._0x00b7 = true
-_0x00b2._0x007a = _0x0060._0x0061(220, 220, 220)
-_0x00b2._0x007d = 12
-_0x00b2._0x00b8 = _0x004d._0x00b8._0x00b9
-_0x00b2._0x00ba = _0x004d._0x00ba._0x00bb
-_0x00b2._0x00bc = true
-_0x0086._0x0088 = _0x005d._0x0022(0, 0, 0, _0x008a._0x00bd._0x00be + 20)
+local function adicionarMensagem(autor, texto, avatar)
+local msgContainer = Instance.new("Frame", scrollingFrame)
+msgContainer.BackgroundTransparency = 1
+msgContainer.Size = UDim2.new(1, 0, 0, (64 / 2))
+local imageIcon = Instance.new("ImageLabel", msgContainer)
+imageIcon.BackgroundTransparency = 1
+imageIcon.Size = UDim2.new(0, 28, 0, 28)
+imageIcon.Image = avatar or ""
+local uiCornerImg = Instance.new("UICorner", imageIcon)
+uiCornerImg.CornerRadius = UDim.new(1, 0)
+local msgLabel = Instance.new("TextLabel", msgContainer)
+msgLabel.BackgroundTransparency = 1
+msgLabel.Position = UDim2.new(0, (48 - 14), 0, 0)
+msgLabel.Size = UDim2.new(1, -34, 1, 0)
+msgLabel.Font = Enum.Font.Gotham
+msgLabel.Text = '<font color="#d73232"><b>' .. autor .. ':</b></font> ' .. texto
+msgLabel.RichText = true
+msgLabel.TextColor3 = Color3.fromRGB(220, (660 / 3), 220)
+msgLabel.TextSize = 12
+msgLabel.TextXAlignment = Enum.TextXAlignment.Left
+msgLabel.TextYAlignment = Enum.TextYAlignment.Center
+msgLabel.TextWrapped = true
+scrollingFrame.CanvasSize = UDim2.new(0, 0, 0, uiListLayout.AbsoluteContentSize.Y + (10 + 10))
 end
-_0x0038._0x00c0:_0x00a0(function(_0x00c1)
+ws.OnMessage:Connect(function(rawMsg)
 pcall(function()
-local _0x00c2 = string._0x00c2(_0x00c1, "||")
-if #_0x00c2 >= 3 then
-_0x00ab(_0x00c2[1], _0x00c2[3], _0x00c2[2])
+local split = string.split(rawMsg, "||")
+if #split >= 3 then
+adicionarMensagem(split[1], split[3], split[2])
 end
 end)
 end)
-local function _0x00c4()
-if _0x008f._0x0079 ~= "" then
-_0x0029()
-local _0x00c5 = _0x000c._0x0027 .. "||" .. _0x004b .. "||" .. _0x008f._0x0079
-_0x0038:_0x00c6(_0x00c5)
-_0x008f._0x0079 = ""
+local function enviar()
+if textBox.Text ~= "" then
+playClickSound()
+local payload = player.Name .. "||" .. thumbUrl .. "||" .. textBox.Text
+ws:Send(payload)
+textBox.Text = ""
 end
 end
-_0x0098._0x009f:_0x00a0(_0x00c4)
-_0x008f._0x00c7:_0x00a0(function(_0x00c8)
-if _0x00c8 then _0x00c4() end
+textButton.MouseButton1Click:Connect(enviar)
+textBox.FocusLost:Connect(function(enterPressed)
+if enterPressed then enviar() end
 end)
